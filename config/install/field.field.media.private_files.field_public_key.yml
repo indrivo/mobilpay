@@ -1,0 +1,26 @@
+langcode: ro
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_public_key
+    - media.type.private_files
+  module:
+    - file
+id: media.private_files.field_public_key
+field_name: field_public_key
+entity_type: media
+bundle: private_files
+label: 'Public Key'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'cer pem'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

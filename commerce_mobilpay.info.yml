@@ -1,0 +1,7 @@
+name: 'commerce MobilPay'
+type: module
+description: 'Drupa e-Commers add MobilPay payment gateways'
+core: 8.x
+package: 'ISF'
+dependencies:
+  - commerce:commerce_payment

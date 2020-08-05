@@ -1,0 +1,12 @@
+langcode: ro
+status: false
+dependencies: {  }
+id: private_files
+label: 'Private Files'
+description: 'Media type for mobilpay keys'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_private_key
+field_map: {  }

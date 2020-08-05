@@ -1,0 +1,58 @@
+
+commerce_mobilpay.mobil_pay_config_form:
+  path: '/admin/config/commerce_mobilpay/mobilpayconfig'
+  defaults:
+    _form: '\Drupal\commerce_mobilpay\Form\MobilPayConfigForm'
+    _title: 'MobilPay Configuration Form'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+commerce_mobilpay.mobil_pay_form:
+  path: '/admin/config/commerce_mobilpay/mobilpay'
+  defaults:
+    _form: '\Drupal\commerce_mobilpay\Form\MobilPayForm'
+    _title: 'MobilPay Form'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+commerce_mobilpay.returnUrl:
+  path: '/commerce/orders/{commerce_order}/return-url'
+  defaults:
+    _controller: '\Drupal\commerce_mobilpay\Controller\OrderProcessController::returnUrl'
+    _title: 'Statut Comandă:'
+  options:
+    parameters:
+      entity:
+        commerce_order: 'entity:commerce_order'
+  requirements:
+    _permission: 'access content'
+
+commerce_mobilpay.orderCancel:
+  path: '/commerce/orders/{commerce_order}/cancel'
+  defaults:
+    _controller: '\Drupal\commerce_mobilpay\Controller\OrderProcessController::orderCancel'
+    _title: 'Payment was cancelled.'
+  options:
+    parameters:
+      entity:
+        commerce_order: 'entity:commerce_order'
+  requirements:
+    _permission: 'access content'
+    _method: 'POST'
+
+commerce_mobilpay.confirmUrl:
+  path: '/commerce/orders/{commerce_order}/confirm-url'
+  defaults:
+    _controller: '\Drupal\commerce_mobilpay\Controller\OrderProcessController::confirmUrl'
+    _title: 'Confirm.'
+  options:
+    parameters:
+      entity:
+        commerce_order: 'entity:commerce_order'
+  requirements:
+    _permission: 'access content'
+    _method: 'POST'

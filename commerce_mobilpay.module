@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains commerce_mobilpay.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function commerce_mobilpay_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the commerce_mobilpay module.
+    case 'help.page.commerce_mobilpay':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Drupa e-Commers add mobilPay payment gateways') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+// /**
+//  * Implements hook_library_info_alter().
+//  */
+// function commerce_mobilpay_library_info_alter(&$libraries, $extension) {
+//   $libraries['Mobilpay'] = array(
+//     'name' => 'MobilPay library',
+//     'vendor url' => 'http://mobilpay.ro',
+//     'download url' => 'https://admin.mobilpay.ro/ro/implement/admin/download-example/docId/1993',
+//     'path' => 'Payment',
+//     'version' => '1.0',
+//     'files' => array(
+//       'php' => array(
+//         'Request/Abstract.php',
+//         'Request/Card.php',
+//         'Request/Notify.php',
+//         'Invoice.php',
+//         'Address.php',
+//       ),
+//     ),
+//   );
+// }

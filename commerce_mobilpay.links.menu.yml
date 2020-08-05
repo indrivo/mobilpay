@@ -1,0 +1,21 @@
+# commerce_mobilpay.mobilpay_gateway_base_form:
+#   title: 'mobilPayGatewayBaseForm'
+#   route_name: commerce_mobilpay.mobilpay_gateway_base_form
+#   description: 'A description for the menu entry'
+#   parent: system.admin_config_system
+#   weight: 99
+
+commerce_mobilpay.mobil_pay_config_form:
+  title: 'MobilPay Configuration'
+  route_name: commerce_mobilpay.mobil_pay_config_form
+  description: 'A description for the menu entry'
+  parent: system.admin_config_system
+  weight: 99
+
+commerce_mobilpay.mobil_pay_form:
+  title: 'MobilPay Form start transaction'
+  route_name: commerce_mobilpay.mobil_pay_form
+  description: 'Test MobilPay Form transaction'
+  parent: system.admin_config_system
+  weight: 99
+

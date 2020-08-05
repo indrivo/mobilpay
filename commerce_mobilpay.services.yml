@@ -1,0 +1,31 @@
+services:
+  commerce_mobilpay.exchange_rate:
+    class: Drupal\commerce_mobilpay\ExchangeRateService
+    arguments: []
+  commerce_mobilpay.reccurence:
+    class: Drupal\commerce_mobilpay\ReccurenceService
+    arguments: []
+  commerce_mobilpay.instrument_card:
+    class: Drupal\commerce_mobilpay\InstrumentCardService
+    arguments: []
+  commerce_mobilpay.invoice_item:
+    class: Drupal\commerce_mobilpay\InvoiceItemService
+    arguments: []
+  commerce_mobilpay.payment_address:
+    class: Drupal\commerce_mobilpay\PaymentAddressService
+    arguments: []
+  commerce_mobilpay.payment_invoice:
+    class: Drupal\commerce_mobilpay\PaimentInvoiceService
+    arguments: ['@commerce_mobilpay.payment_address', '@commerce_mobilpay.invoice_item', '@commerce_mobilpay.exchange_rate']
+  commerce_mobilpay.request_card:
+    class: Drupal\commerce_mobilpay\RequestCardService
+    arguments: ['@commerce_mobilpay.payment_invoice', '@commerce_mobilpay.reccurence', '@commerce_mobilpay.instrument_card']
+  commerce_mobilpay.request_notify:
+    class: Drupal\commerce_mobilpay\RequestNotifyService
+    arguments: []
+  commerce_mobilpay.request_sms:
+    class: Drupal\commerce_mobilpay\RequestSmsService
+    arguments: []
+  commerce_mobilpay.proccess:
+    class: Drupal\commerce_mobilpay\RedirectCheckoutService
+    arguments: ['@commerce_mobilpay.instrument_card', '@commerce_mobilpay.request_card', '@commerce_mobilpay.payment_invoice', '@commerce_mobilpay.payment_address']

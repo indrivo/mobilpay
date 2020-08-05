@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.private_files.field_private_key
+    - field.field.media.private_files.field_public_key
+    - media.type.private_files
+id: media.private_files.default
+targetEntityType: media
+bundle: private_files
+mode: default
+content:
+  name:
+    type: string
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_private_key: true
+  field_public_key: true
+  langcode: true
+  thumbnail: true
+  uid: true
